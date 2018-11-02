@@ -2,7 +2,7 @@ include conf/machine/include/x86-base.inc
 #MACHINE_FEATURES += "wifi efi pcbios"
 #MACHINE_FEATURES += "ext4"
 
-PREFERRED_PROVIDER_virtual/kernel ?= "linux-MLD"
+PREFERRED_PROVIDER_virtual/kernel ?= "linux-x86"
 PREFERRED_VERSION_linux-MLD ?= "x86%"
 PREFERRED_PROVIDER_virtual/xserver ?= "xserver-xorg"
 XSERVER ?= "${XSERVER_X86_BASE} \

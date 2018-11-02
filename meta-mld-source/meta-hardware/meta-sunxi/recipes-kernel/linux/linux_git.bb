@@ -16,6 +16,11 @@ RDEPENDS_kernel-base += "kernel-devicetree"
 # If you want to use latest git version set to "1"
 DEFAULT_PREFERENCE = "-1" 
 
+
+KERNEL_VERSION_NAME = "${@d.getVar('KERNEL_VERSION') or ""}"
+KERNEL_VERSION_NAME[vardepvalue] = "${LINUX_VERSION}"
+KERNEL_VERSION_PKG_NAME = "${@legitimize_package_name(d.getVar('KERNEL_VERSION'))}"
+KERNEL_VERSION_PKG_NAME[vardepvalue] = "${LINUX_VERSION}"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 	
 # 4.5.0

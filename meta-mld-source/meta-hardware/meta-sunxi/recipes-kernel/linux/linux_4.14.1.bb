@@ -14,6 +14,12 @@ RDEPENDS_kernel-base += "kernel-devicetree"
 
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
+
+KERNEL_VERSION_NAME = "${@d.getVar('KERNEL_VERSION') or ""}"
+KERNEL_VERSION_NAME[vardepvalue] = "${LINUX_VERSION}"
+KERNEL_VERSION_PKG_NAME = "${@legitimize_package_name(d.getVar('KERNEL_VERSION'))}"
+KERNEL_VERSION_PKG_NAME[vardepvalue] = "${LINUX_VERSION}"
+
 S = "${WORKDIR}/linux-${PV}"
 	
 SRC_URI[md5sum] = "5de15914005314d964f37cff85a59048"

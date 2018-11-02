@@ -48,7 +48,7 @@ IMAGE_INSTALL_append += " \
     "    
 
 # Base this image on mld-image-minimal
-include recipes-core/images/mld-vdr-image.bb
+# include recipes-core/images/mld-vdr-image.bb
 
 
 #INITRAMFS_IMAGE = "MLD-initramfs"
