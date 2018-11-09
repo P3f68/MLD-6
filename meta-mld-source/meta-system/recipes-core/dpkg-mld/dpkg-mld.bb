@@ -6,11 +6,10 @@ PN = "dpkg-mld"
 
 
 LICENSE = "MIT"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d690 \
-                    file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
- 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302 \
+                    file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
 SRC_URI = " file://etc/dpkg/dpkg.cfg \
             file://etc/dpkg/dpkg.invoke \

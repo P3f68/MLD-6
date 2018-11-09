@@ -6,8 +6,8 @@
 - Ubuntu and Debian
 
      $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-     build-essential chrpath socat libsdl1.2-dev xterm tree \
-     libunix-mknod-perl libperl4-corelibs-perl 
+     build-essential chrpath socat libsdl1.2-dev xterm tree libssl-dev \
+     libunix-mknod-perl libperl4-corelibs-perl libelf-dev apt-file
 
 - Fedora
 

@@ -116,10 +116,10 @@ build_boot_bin() {
     fi
 } 
 
-#python do_bootimg() {
-#    bb.build.exec_func('build_syslinux_cfg', d)
-#    bb.build.exec_func('build_boot_bin', d)
-#}
+python do_bootimg() {
+    bb.build.exec_func('build_syslinux_cfg', d)
+    bb.build.exec_func('build_boot_bin', d)
+}
 
 #addtask bootimg before do_build
 #do_bootimg[nostamp] = "1"

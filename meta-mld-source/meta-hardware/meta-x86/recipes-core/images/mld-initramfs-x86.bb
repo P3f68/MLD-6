@@ -33,6 +33,7 @@ IMAGE_FSTYPES = "${INITRAMFS_FSTYPES}"
 inherit image
 
 IMAGE_ROOTFS_SIZE = "8192"
+INITRAMFS_MAXSIZE = "139821"
 
 
 export IMAGE_BASENAME = "mld-initramfs-x86"
