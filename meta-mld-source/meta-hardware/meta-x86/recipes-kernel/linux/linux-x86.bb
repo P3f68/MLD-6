@@ -129,12 +129,10 @@ KMACHINE_genericx86-64 ?= "common-pc-64"
 #SRCREV = "cf94ecafe6ef3fb9ba94084666c9b7ef5433d436"
 
 # Kernel 4.18.16
-#KERNEL_VERSION ?= "4.18"
-#PV ?= "4.18.16"
+#LINUX_VERSION ?= "4.18.16"
 #SRCREV = "94710cac0ef4ee177a63b5227664b38c95bbf703"
 
 # Kernel 4.19.1
-KERNEL_VERSION += "4.19"
 LINUX_VERSION ?= "4.19.1"
 SRCREV = "07a03b97b9ce2a6430344386eeab9b16283b893f"
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.19.y"
@@ -143,7 +141,6 @@ SRC_URI += " file://linux.config.x86 \
              file://COPYING.GPL \
         "
 
-#PV = "${LINUX_VERSION}+git${DATE}"
 PV = "${LINUX_VERSION}"
 
 S = "${WORKDIR}/git"
