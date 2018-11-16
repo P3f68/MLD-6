@@ -133,8 +133,12 @@ KMACHINE_genericx86-64 ?= "common-pc-64"
 #SRCREV = "94710cac0ef4ee177a63b5227664b38c95bbf703"
 
 # Kernel 4.19.1
-LINUX_VERSION ?= "4.19.1"
-SRCREV = "07a03b97b9ce2a6430344386eeab9b16283b893f"
+#LINUX_VERSION ?= "4.19.1"
+#SRCREV = "07a03b97b9ce2a6430344386eeab9b16283b893f"
+
+# Kernel 4.19.2
+LINUX_VERSION ?= "4.19.2"
+SRCREV = "7950eb316adf792283cac5743dfe5a11e74833dc"
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.19.y"
 
 SRC_URI += " file://linux.config.x86 \

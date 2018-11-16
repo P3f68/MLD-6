@@ -19,6 +19,3 @@ XSERVER ?= "${XSERVER_X86_BASE} \
 #GLIBC_ADDONS = "nptl"
 
 #EXTRA_OECONF_append_pn-matchbox-panel-2 = " --with-battery=acpi"
-
-
-

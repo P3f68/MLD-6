@@ -15,6 +15,28 @@ LICENSE = "MIT"
 
 include recipes-core/images/core-image-minimal.bb
 
+INITRAMFS_MAXSIZE ??= "262144"
+
+PACKAGE_INSTALL_append = " \
+    kernel-modules\
+    base \
+    findutils \
+    init-mld \
+    initramfs \
+    install \
+    locales \
+    network \
+    ssh-mld \
+    udev-mld \
+    urldecode \
+    webserver \
+    gettext \
+    gettext-runtime \
+    init-ifupdown \
+    network \
+    apt \
+    "
+
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302 \
@@ -26,38 +48,20 @@ IMAGE_LINGUAS ?= "de-de"
 #LABELS = "MLD"
 LABELS_LIVE ?= "MLD boot install"
 
-SPLASH_IMAGE = "silent.png"
+#SPLASH_IMAGE = "silent.png"
 
 IMAGE_FEATURES += "package-management ssh-server-openssh splash"
-
-IMAGE_INSTALL_append += " \
-    kernel-modules\
-    base-files \
-    base \
-    findutils \
-    init-mld \
-    gettext \
-    gettext-runtime \
-    urldecode \
-    webserver \
-    extlinux \
-    psplash \
-    ssh-mld \
-    udev-mld \
-    install \
-    locales \
-    "    
 
 # Base this image on mld-image-minimal
 # include recipes-core/images/mld-vdr-image.bb
 
 
-#INITRAMFS_IMAGE = "MLD-initramfs"
-#INITRAMFS_IMAGE_BUNDLE = "1"
+INITRAMFS_IMAGE = "MLD-initramfs"
+INITRAMFS_IMAGE_BUNDLE = "1"
 
-#INITRD_IMAGE = "MLD-initramfs"
-#INITRD_IMAGE = "initramfs-framework"
-#IMAGE_FSTYPES = "iso"
+INITRD_IMAGE = "MLD-initramfs"
+INITRD_IMAGE = "initramfs-framework"
+IMAGE_FSTYPES = "iso"
 
 #VIRTUAL-RUNTIME_login_manager = "busybox"
 #VIRTUAL-RUNTIME_init_manager = "busybox"
@@ -69,9 +73,8 @@ IMAGE_INSTALL_append += " \
 
 # Alle Einstellungen die sich auf das Syslinux beziehen
 AUTO_SYSLINUXMENU = "1"
-SYSLINUX_SPLASH = "${WORKDIR}/silent.png"
+#SYSLINUX_SPLASH = "${WORKDIR}/silent.png"
 #SYSLINUX_ROOT = "root=/"
 #APPEND = "vga=0x314 splash=verbose nobg apm=off"
 
 export IMAGE_BASENAME="x86"
-

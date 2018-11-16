@@ -133,7 +133,8 @@ initialize: init
 init: setupmbuild $(BBLAYERS) $(CONFFILES)
 
 image: init
-	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake $(DISTRO)-image-$(MACHINEBUILD) 
+	#@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake $(DISTRO)-image-$(MACHINEBUILD) 
+	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake image-$(MACHINEBUILD) 
 
 nohup : init
 	@. $(TOPDIR)/env.source && cd $(TOPDIR) && nohup bitbake $(DISTRO)-image-$(MACHINEBUILD) 

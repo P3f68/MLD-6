@@ -28,8 +28,8 @@
 do_bootimg[depends] += "dosfstools-native:do_populate_sysroot \
                        syslinux:do_populate_sysroot \
                        syslinux-native:do_populate_sysroot \
-               mtools-native:do_populate_sysroot \
-               cdrtools-native:do_populate_sysroot"
+		       mtools-native:do_populate_sysroot \
+        	       cdrtools-native:do_populate_sysroot"
 
 PACKAGES = " "
 EXCLUDE_FROM_WORLD = "1"
@@ -121,5 +121,8 @@ python do_bootimg() {
     bb.build.exec_func('build_boot_bin', d)
 }
 
-#addtask bootimg before do_build
-#do_bootimg[nostamp] = "1"
+# We need to run after bootsplash if it exists, so thats why this line
+# is such.  Don't worry, if you don't do bootsplash, nobody will notice
+# do_bootimg[nostamp] = "1"
+
+addtask bootimg before do_build after do_bootsplash
