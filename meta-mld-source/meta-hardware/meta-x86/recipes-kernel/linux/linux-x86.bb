@@ -11,7 +11,7 @@ SRC = "20151106"
 
 
 LINUX_VERSION_EXTENSION_append = "-x86"
-inherit kernel 
+inherit kernel pkgconfig
 
 LIC_FILES_CHKSUM = "file://${WORKDIR}/COPYING.GPL;md5=751419260aa954499f7abaabaa882bbe"
 
@@ -32,6 +32,12 @@ KERNEL_VERSION_PKG_NAME[vardepvalue] = "${LINUX_VERSION}"
 
 KMACHINE_genericx86 ?= "common-pc"
 KMACHINE_genericx86-64 ?= "common-pc-64"
+
+
+# Functionality flags
+KERNEL_EXTRA_FEATURES ?= "features/netfilter/netfilter.scc features/taskstats/taskstats.scc"
+KERNEL_FEATURES_append = " ${KERNEL_EXTRA_FEATURES}"
+KERNEL_FEATURES_append = " ${@bb.utils.contains("TUNE_FEATURES", "mx32", " cfg/x32.scc", "" ,d)}"
 
 # Kernel 3.16.1
 #KERNEL_VERSION ?= "3.16"
@@ -137,8 +143,13 @@ KMACHINE_genericx86-64 ?= "common-pc-64"
 #SRCREV = "07a03b97b9ce2a6430344386eeab9b16283b893f"
 
 # Kernel 4.19.2
-LINUX_VERSION ?= "4.19.2"
-SRCREV = "7950eb316adf792283cac5743dfe5a11e74833dc"
+#LINUX_VERSION ?= "4.19.2"
+#SRCREV = "7950eb316adf792283cac5743dfe5a11e74833dc"
+#SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.19.y"
+
+# Kernel 4.19.8
+LINUX_VERSION ?= "4.19.8"
+SRCREV = "55cbeea76e769b12cd0f1340132d32781f73a3dc"
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.19.y"
 
 SRC_URI += " file://linux.config.x86 \
@@ -156,6 +167,7 @@ KERNEL_IMAGEDEST = "/tmp"
 
 # make[3]: *** [scripts/extract-cert] Error 1
 DEPENDS += "openssl-native"
+DEPENDS += "${@bb.utils.contains('ARCH', 'x86', 'elfutils-native', '', d)}"
 HOST_EXTRACFLAGS += "-I${STAGING_INCDIR_NATIVE}"
 
 do_configure() {

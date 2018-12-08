@@ -160,6 +160,9 @@ pkg_build_clean: init
 pkg_clean: init
 	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake -c clean $(pkg) 
 
+quilt_clean: init
+	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake -c clean quilt-native gnu-config-native
+
 pkg_force: init
 	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake -f -c compile $(pkg) 
 
