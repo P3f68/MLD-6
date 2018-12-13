@@ -138,18 +138,9 @@ KERNEL_FEATURES_append = " ${@bb.utils.contains("TUNE_FEATURES", "mx32", " cfg/x
 #LINUX_VERSION ?= "4.18.16"
 #SRCREV = "94710cac0ef4ee177a63b5227664b38c95bbf703"
 
-# Kernel 4.19.1
-#LINUX_VERSION ?= "4.19.1"
-#SRCREV = "07a03b97b9ce2a6430344386eeab9b16283b893f"
-
-# Kernel 4.19.2
-#LINUX_VERSION ?= "4.19.2"
-#SRCREV = "7950eb316adf792283cac5743dfe5a11e74833dc"
-#SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.19.y"
-
-# Kernel 4.19.8
-LINUX_VERSION ?= "4.19.8"
-SRCREV = "55cbeea76e769b12cd0f1340132d32781f73a3dc"
+# Kernel 4.19.9
+LINUX_VERSION ?= "4.19.9"
+SRCREV = "0fc19a8881e68ccbd252e2916756c7b6a7bec65c"
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.19.y"
 
 SRC_URI += " file://linux.config.x86 \

@@ -49,8 +49,8 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-mld-source/meta-hardware/meta-x86 \
 	$(CURDIR)/meta-mld-source/meta-hardware/meta-rpi \
 	$(CURDIR)/meta-mld-source/meta-hardware/meta-sunxi \
-    $(CURDIR)/meta-mld-source/meta-hardware/meta-amlogic \
-    $(CURDIR)/meta-mld-source/meta-system \
+	$(CURDIR)/meta-mld-source/meta-hardware/meta-amlogic \
+	$(CURDIR)/meta-mld-source/meta-system \
 	$(CURDIR)/meta-local \
 
 CONFFILES = \
