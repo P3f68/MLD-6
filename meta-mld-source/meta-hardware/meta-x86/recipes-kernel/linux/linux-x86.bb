@@ -138,10 +138,15 @@ KERNEL_FEATURES_append = " ${@bb.utils.contains("TUNE_FEATURES", "mx32", " cfg/x
 #LINUX_VERSION ?= "4.18.16"
 #SRCREV = "94710cac0ef4ee177a63b5227664b38c95bbf703"
 
-# Kernel 4.19.9
-LINUX_VERSION ?= "4.19.9"
-SRCREV = "0fc19a8881e68ccbd252e2916756c7b6a7bec65c"
+# Kernel 4.19.12
+LINUX_VERSION ?= "4.19.12"
+SRCREV = "b4c7c826709b7d882ec9b264d5032e887e6bd720"
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.19.y"
+
+# Kernel 4.20.1
+#LINUX_VERSION ?= "4.20"
+#SRCREV = "dcc1d8d3390639bc88323070d368024579f2154e"
+#SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.20.y"
 
 SRC_URI += " file://linux.config.x86 \
              file://COPYING.GPL \
